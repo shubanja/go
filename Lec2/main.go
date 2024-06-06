@@ -35,4 +35,12 @@ func main() {
 		personId   int
 	)
 	fmt.Printf("personName: %s\nAge: %d\nUID: %d\n", personName, personAge, personId)
+	///немного странного
+	var a, b = 30, "vova"
+	fmt.Println(a, b)
+	///немного хорошего. повторное декларирование переменой
+	///var a = 200
+
+	//коротаая декларация
+
 }
