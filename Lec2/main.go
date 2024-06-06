@@ -47,7 +47,9 @@ func main() {
 	count = count + 2
 	fmt.Println(count)
 	//////
-	//множественное присваивание через :=
-	aArg, bArg := 1, "Vova"
+	//множественное присваивание через короткую декларацию :=
+	aArg, bArg := 1, 5
+	fmt.Println(aArg, bArg)
+	aArg, bArg = 5, 5
 	fmt.Println(aArg, bArg)
 }
