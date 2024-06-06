@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func main() {
 	fmt.Println("A", "Привет! Я новый студент!")
@@ -52,4 +55,19 @@ func main() {
 	fmt.Println(aArg, bArg)
 	aArg, bArg = 5, 5
 	fmt.Println(aArg, bArg)
+	//aArg, bArg := 1, 5 не даст уже переменная заделарирована
+	//fmt.Println(aArg, bArg)
+	//Исключения из этого правила
+	bArg, cArg := 300, 200
+	fmt.Println(aArg, bArg, cArg)
+	//Пример
+	width, length := 20.2, 30.3
+	fmt.Printf("Min dimensional of rectangle is: %.0f\n", math.Min(width, length))
+	///задание С
+	word1, word2, word3, word4 := "имя", "твое", "мне", "знакомо"
+	fmt.Println(word4, word3, word2, word1)
+	fmt.Println(word3, word1, word4, word2)
+	fmt.Println(word2, word4, word3, word1)
+	///
+
 }
