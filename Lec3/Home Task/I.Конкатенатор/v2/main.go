@@ -9,8 +9,9 @@ func main() {
 	var (
 		result strings.Builder
 	)
-
-	result.WriteString(s)
+	//fmt.Printf("%s...", result)
+	result.WriteString("s")
+	result.WriteString("w")
 
 	fmt.Print(result.String())
 
