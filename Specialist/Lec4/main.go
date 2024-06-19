@@ -9,7 +9,7 @@ func main() {
 	//Boolean operand
 	aBoolean, bBoolean := true, true
 	fmt.Println("AND:", aBoolean && bBoolean) // логическое умнажение  И - &&
-	fmt.Println("OR:", aBoolean || bBoolean)  // логическое И
+	fmt.Println("OR:", aBoolean || bBoolean)  // логическое ИЛИ
 	fmt.Println("NOT:", !aBoolean)            // ! Отрицание
 
 	//Numerics. Integres
