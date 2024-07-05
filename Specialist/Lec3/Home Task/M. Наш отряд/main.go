@@ -15,10 +15,21 @@ import (
 
 func main() {
 	var (
-		aArg int
-		bArg int
+		aArg      string
+		lookForA  string = "Раз"
+		lookForA2 string = "Один"
+		lookForA3 int    = 1
+		//bArg int
+		//cArg int
 	)
 
-	fmt.Scan(&aArg, &bArg)
-	fmt.Print(aArg + bArg)
+	fmt.Scan(&aArg)
+
+	if aArg == lookForA || lookForA2 || lookForA3 {
+		fmt.Print("ok")
+	} else {
+		fmt.print("NOT")
+	}
+
+	fmt.Printf("%d", aArg)
 }
