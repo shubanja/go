@@ -27,7 +27,7 @@ func main() {
 	fmt.Printf("Type is %T\n", a)
 	//Узнает сколько байт занимает переменая типа int
 	fmt.Printf("type %T size of %d bytes\n", a, unsafe.Sizeof(a))
-	//Эксперемент 1 при кородком объявлеии плавтформа зависимы
+	//Эксперемент 1 при коротком объявлеии плавтформа зависимы
 	fmt.Printf("type %T size of %d bytes\n", a, unsafe.Sizeof(b))
 
 	//Эксперемент 2
@@ -79,7 +79,7 @@ func main() {
 	fmt.Printf("Run as char %c\n", anotherRune)
 	fmt.Printf("Run as char %c\n", thirdRune)
 	// Сравнение стринг
-	fmt.Println(strings.Compare("abcd", "bc")) // -1 не очень понял\
+	fmt.Println(strings.Compare("abcd", "ab")) // -1 не очень понял\
 
 	var aArg byte // alias uint8
 	fmt.Println("Byte:", aArg)
