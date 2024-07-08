@@ -16,19 +16,16 @@ import (
 
 func main() {
 
-	var praicRUB int = 23
-	var praicCOP int = 23
+	var praic float64 = 0.23
 	var samplText string
-	var resultCop int
 	var result int
-	//var totalPrice string
 	fmt.Scan(&samplText)
 	result = utf8.RuneCountInString(samplText)
 	var resultRub float64 = float64(result) * praic
-
-	if resultCop > 100 {
-		fmt.Printf("%d р. %d коп.", int64(resultRub), int64(resultCop)-int64(resultRub))
+	var RUB int = int(resultRub)
+	if resultRub > 1.00 {
+		fmt.Printf("%d р. %d коп.", int64(RUB), int((resultRub-float64(RUB))*100))
 	} else {
-		fmt.Printf("цена %d копеек", resultRub)
+		fmt.Printf("%d коп.", int(resultRub*100))
 	}
 }
