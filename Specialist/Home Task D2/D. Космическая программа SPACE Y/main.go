@@ -1,8 +1,20 @@
 package main
 
-func main() {
-	var count int
-	for i := 0; i < count; i++ {
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
 
+func main() {
+	reader := bufio.NewReader(os.Stdin)
+
+outer:
+	for {
+		text, space := reader.ReadString(' ')
+		fmt.Print(text)
+		if space == nil {
+			break outer
+		}
 	}
 }
