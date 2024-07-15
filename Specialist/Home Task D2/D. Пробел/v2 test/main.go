@@ -1,10 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
 
 func main() {
-	var aArg string = "Hello World"
-	fmt.Println(aArg)
-	fmt.Println(aArg)
+	reader := bufio.NewReader(os.Stdin)
 
+	fmt.Print("Введите строку: ")
+	line, _ := reader.ReadString(' ')
+
+	fmt.Println("Введена строка:", line)
 }
