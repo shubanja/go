@@ -10,7 +10,7 @@ func main() {
 	reader := bufio.NewReader(os.Stdin)
 
 	fmt.Print("Введите строку: ")
-	line, _ := reader.ReadString(' ')
+	line, _ := reader.ReadString('\n')
 
-	fmt.Println("Введена строка:", line)
+	fmt.Printf("Введена строка:%s, type %T", line, line)
 }

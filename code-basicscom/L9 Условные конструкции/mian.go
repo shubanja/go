@@ -5,19 +5,22 @@ package main
 
 import (
 	"fmt"
-	"strings"
 )
 
 func main() {
-	var msg string
-	fmt.Scanln(&msg)
-	fmt.Println(reetings(msg))
+	var a string
+	var b string
+	fmt.Print("Enter domain:")
+	fmt.Scanln(&a)
+	fmt.Print("Enter local:")
+	fmt.Scanln(&b)
+	fmt.Print(DomainForLocale(a, b))
 }
 
-func reetings(name string) string {
-	name = strings.Trim(name, " ")
-	name = strings.ToLower(name)
-	name = strings.Title(name)
+func DomainForLocale(domain, locale string) string {
+	if locale == "" {
+		locale = "en"
+	}
+	return fmt.Sprintf("%s.%s", locale, domain)
 
-	return fmt.Sprintf("Привет, %s!", name)
 }
