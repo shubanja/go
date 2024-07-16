@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type User struct {
 	ID        int64  `validate:"required"`
 	Email     string `validate:"required,email"`
@@ -7,6 +9,7 @@ type User struct {
 }
 
 func main() {
+	fmt.Println(User{})
 	// создали пустую структуру, чтобы проверить валидацию
 	//u := User{}
 
