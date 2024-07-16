@@ -1,3 +1,4 @@
+// Замена символов в строке
 package main
 
 import (
