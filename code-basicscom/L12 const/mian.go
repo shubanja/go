@@ -1,34 +1,22 @@
 package main
 
-import (
-	"fmt"
-	"strings"
+import "fmt"
+
+const (
+	zero = iota
+	one
+	two
+	three
 )
 
-// UserCreateRequest is a request to create a new user.
-type UserCreateRequest struct {
-	FirstName string // не может быть пустым; не может содержать пробелы
-	Age       int    // не может быть 0 или отрицательным; не может быть больше 150
-}
-
-var invalRequest = "invalid request"
+const (
+	a = iota
+	b = 42
+	c = iota
+	d
+)
 
 func main() {
-	u := UserCreateRequest{}
-	u.FirstName = "Alex"
-	u.Age = 18
-	fmt.Println(Validate(u))
-}
-
-func Validate(req UserCreateRequest) string {
-
-	if req.FirstName == "" || strings.Contains(req.FirstName, " ") {
-		return invalRequest
-	}
-
-	if req.Age <= 0 || req.Age > 150 {
-		return invalRequest
-	}
-
-	return ""
+	fmt.Println(zero, one, two, three) // 0 1 2 3
+	fmt.Println(a, b, c, d)            // 0 42 2 3
 }
