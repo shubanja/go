@@ -1,23 +1,27 @@
-//Реализуйте функцию Greetings(name string) string, которая вернет строку-приветствие.
-//Например, при передаче имени Иван, возвращается Привет, Иван!. Учтите, что имя может быть написано в разном регистре и содержать пробелы.
-
 package main
 
-import (
-	"fmt"
-	"strings"
-)
+import "strings"
 
-func main() {
-	var msg string
-	fmt.Scanln(&msg)
-	fmt.Println(reetings(msg))
+type UserCreateRequest struct {
+	FirstName string // не может быть пустым; не может содержать пробелы
+	Age       int    // не может быть 0 или отрицательным; не может быть больше 150
 }
 
-func reetings(name string) string {
-	name = strings.Trim(name, " ")
-	name = strings.ToLower(name)
-	name = strings.Title(name)
+var invalRequest = "invalid request"
 
-	return fmt.Sprintf("Привет, %s!", name)
+func main() {
+
+}
+
+func Validate(req UserCreateRequest) string {
+
+	if req.FirstName == "" || strings.Contains(req.FirstName, " ") {
+		return invalRequest
+	}
+
+	if req.Age == 0 || req.Age < 0 || req.Age > 150 {
+		return invalRequest
+	}
+
+	return " "
 }

@@ -1,23 +1,32 @@
 package main
 
 import (
-	"encoding/json"
+	"bufio"
 	"fmt"
+	"os"
+	"strings"
 )
 
-type User struct {
-	ID        int64  `json:"id"`
-	Email     string `json:"email"`
-	FirstName string `json:"first_name"`
+func main() {
+	reader := bufio.NewReader(os.Stdin)
+	line, _ := reader.ReadString('\n')
+	var mode string
+	fmt.Scanln(&mode)
+	fmt.Println(ModifySpaces(line, mode))
 }
 
-func main() {
-	u := User{}
-	u.ID = 22
-	u.Email = "test@test.com"
-	u.FirstName = "John"
+// ModifySpaces modifies string s depending on mode.
+func ModifySpaces(s, mode string) string {
+	var replacement string
 
-	bs, _ := json.Marshal(u)
+	switch mode {
+	case "dash":
+		replacement = "-"
+	case "underscore":
+		replacement = "_"
+	default:
+		replacement = "*"
+	}
 
-	fmt.Println(string(bs)) // {"id":22,"email":"test@test.com","first_name":"John"}
+	return strings.ReplaceAll(s, " ", replacement)
 }
