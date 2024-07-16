@@ -1,33 +1,23 @@
-// Замена символов в строке
 package main
 
 import (
-	"bufio"
+	"encoding/json"
 	"fmt"
-	"os"
-	"strings"
 )
 
-func main() {
-	reader := bufio.NewReader(os.Stdin)
-	line, _ := reader.ReadString('\n')
-	var mode string
-	fmt.Scanln(&mode)
-	fmt.Println(ModifySpaces(line, mode))
+type User struct {
+	ID        int64  `json:"id"`
+	Email     string `json:"email"`
+	FirstName string `json:"first_name"`
 }
 
-// ModifySpaces modifies string s depending on mode.
-func ModifySpaces(s, mode string) string {
-	var replacement string
+func main() {
+	u := User{}
+	u.ID = 22
+	u.Email = "test@test.com"
+	u.FirstName = "John"
 
-	switch mode {
-	case "dash":
-		replacement = "-"
-	case "underscore":
-		replacement = "_"
-	default:
-		replacement = "*"
-	}
+	bs, _ := json.Marshal(u)
 
-	return strings.ReplaceAll(s, " ", replacement)
+	fmt.Println(string(bs)) // {"id":22,"email":"test@test.com","first_name":"John"}
 }
