@@ -1,24 +1,27 @@
-// Hi Hi Hi
-
 package main
 
 import "fmt"
 
-const (
-	zero = iota
-	one
-	two
-	three
-)
-
-const (
-	a = iota
-	b = 42
-	c = iota
-	d
-)
-
 func main() {
-	fmt.Println(zero, one, two, three) // 0 1 2 3
-	fmt.Println(a, b, c, d)            // 0 42 2 3
+	var inMsg string
+	fmt.Scanln(&inMsg)
+	fmt.Print(ErrorMessageToCode(inMsg))
+}
+
+func ErrorMessageToCode(msg string) int {
+	const (
+		OK = iota
+		CANCELLED
+		UNKNOWN
+	)
+	switch msg {
+	case "OK":
+		return OK
+	case "CANCELLED":
+		return CANCELLED
+	case "UNKNOWN":
+		return UNKNOWN
+	default:
+		return UNKNOWN
+	}
 }
