@@ -17,7 +17,7 @@ import (
 
 func main() {
 	var n int
-	//var m = 1000000
+	//var m = 10000000
 	var i int
 
 	fmt.Scan(&n)
