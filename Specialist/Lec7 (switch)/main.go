@@ -46,7 +46,7 @@ func main() {
 		fmt.Println("C - D")
 		//continue
 	case "e", "f":
-		fmt.Println("E - F")
+		fmt.Println("F")
 		//continue
 	case "g", "j":
 		fmt.Println("G - J")

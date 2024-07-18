@@ -15,13 +15,34 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
-	var inText string
-	fmt.Print("Enter the password")
-	fmt.Scan(&inText)
-	for {
+	var onePass, secPass string
 
+	for {
+	outer:
+		for {
+			fmt.Print("Enter the password:")
+			fmt.Scan(&onePass)
+			if len(onePass) < 8 {
+				fmt.Println("Слишком короткий пароль!")
+				break outer
+			} else if strings.Contains(onePass, "123") || strings.Contains(onePass, "qwe") {
+				fmt.Println("Слишком простой пароль!")
+				break outer
+			}
+			fmt.Print("Resume password:")
+			fmt.Scan(&secPass)
+			if onePass == secPass {
+				fmt.Println("Ну наконец-то")
+				return
+			} else if onePass != secPass {
+				fmt.Println("Введенные пароли различаются!")
+			}
+		}
 	}
 }

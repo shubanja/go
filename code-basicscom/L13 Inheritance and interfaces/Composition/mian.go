@@ -3,21 +3,11 @@
 
 package main
 
-import (
-	"fmt"
-	"strings"
-)
-
-func main() {
-	var msg string
-	fmt.Scanln(&msg)
-	fmt.Println(reetings(msg))
+type Car struct {
+	// … содержимое
 }
 
-func reetings(name string) string {
-	name = strings.Trim(name, " ")
-	name = strings.ToLower(name)
-	name = strings.Title(name)
-
-	return fmt.Sprintf("Привет, %s!", name)
+type FireEngine struct {
+	basis Car
+	// … дополнение
 }

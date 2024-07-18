@@ -1,20 +1,26 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"os"
+	"strings"
 )
 
 func main() {
-	reader := bufio.NewReader(os.Stdin)
+	var text string
 
 outer:
 	for {
-		text, space := reader.ReadString(' ')
-		fmt.Print(text)
-		if space == nil {
+		fmt.Scanln(&text)
+		fmt.Printf("type: %T, out:%s \n", text, text)
+		if Validate(text) {
 			break outer
 		}
 	}
+}
+
+func Validate(req string) bool {
+	if req == "" || strings.Contains(req, "\n") {
+		return true
+	}
+	return false
 }
