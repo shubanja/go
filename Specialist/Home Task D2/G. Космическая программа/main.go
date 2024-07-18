@@ -20,34 +20,29 @@
 
 package main
 
-import (
-	"fmt"
-	"strings"
-)
+import "fmt"
 
 func main() {
-	var onePass, secPass string
+	var uPuls float64
+	var minPuls float64 = 140
+	var maxPuls float64 = 100
+	var people float64
 
+outer:
 	for {
-	outer:
-		for {
-			fmt.Print("Enter the password:")
-			fmt.Scan(&onePass)
-			if len(onePass) < 8 {
-				fmt.Println("Слишком короткий пароль!")
-				break outer
-			} else if strings.Contains(onePass, "123") || strings.Contains(onePass, "qwe") {
-				fmt.Println("Слишком простой пароль!")
-				break outer
+		fmt.Scanln(&uPuls)
+		if uPuls >= 100 && uPuls <= 140 {
+			people = people + 1
+			if uPuls < minPuls {
+				minPuls = uPuls
+			} else if uPuls > maxPuls {
+				maxPuls = uPuls
 			}
-			fmt.Print("Resume password:")
-			fmt.Scan(&secPass)
-			if onePass == secPass {
-				fmt.Println("Ну наконец-то")
-				return
-			} else if onePass != secPass {
-				fmt.Println("Введенные пароли различаются!")
-			}
+		} else if uPuls < 0 {
+			break outer
 		}
+
 	}
+	fmt.Println(people)
+	fmt.Println(minPuls, maxPuls)
 }
