@@ -68,4 +68,14 @@ func main() {
 		}
 		fmt.Println()
 	}
+	//12 Общение со срезом
+	slice := []int{10, 20, 30}
+	slice[0] = slice[0] * 10
+	slice[1] = 100
+	slice = append(slice, 200) // доб нов элемента
+	fmt.Println(slice)
+	for i, v := range slice {
+		fmt.Println(i, v)
+	}
+
 }
