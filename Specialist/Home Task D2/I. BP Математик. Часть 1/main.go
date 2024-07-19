@@ -10,27 +10,27 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"os"
 )
 
 func main() {
 	var n int
 	//var m = 10000000
 	var i int
+	var ACHTUNG int
 
 	fmt.Scan(&n)
 
 	for i = 1; i <= n; i++ {
-		if n/i == 0 {
-			if n/i*i == n {
-				fmt.Printf(" %d ", i)
-				fmt.Print("Press 'Enter' to continue...")
-				bufio.NewReader(os.Stdin).ReadBytes('\n')
-			}
+		if n%i == 0 {
+			fmt.Printf(" %d", i)
+			ACHTUNG = ACHTUNG + 1
+
 		}
-		fmt.Printf("в %d ", i)
+
 	}
-	fmt.Printf("п %d ", i)
+	fmt.Print("\n")
+	if ACHTUNG <= 2 {
+		fmt.Println("ACHTUNG")
+	}
 }
