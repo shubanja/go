@@ -19,7 +19,10 @@ func main() {
 	var i int
 	var ACHTUNG int
 
-	fmt.Scan(&n)
+	_, err := fmt.Scan(&n)
+	if err != nil {
+		return
+	}
 
 	for i = 1; i <= n; i++ {
 		if n%i == 0 {
