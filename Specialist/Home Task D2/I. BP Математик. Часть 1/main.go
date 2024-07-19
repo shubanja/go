@@ -14,26 +14,25 @@ import (
 )
 
 func main() {
-	var n int
-	//var m = 10000000
+	var value int // checked number
 	var i int
-	var ACHTUNG int
+	var naturalNUB int
 
-	_, err := fmt.Scan(&n)
+	_, err := fmt.Scan(&value) // enter number
 	if err != nil {
 		return
 	}
 
-	for i = 1; i <= n; i++ {
-		if n%i == 0 {
+	for i = 1; i <= value; i++ {
+		if value%i == 0 {
 			fmt.Printf(" %d", i)
-			ACHTUNG = ACHTUNG + 1
+			naturalNUB = naturalNUB + 1
 
 		}
 
 	}
 	fmt.Print("\n")
-	if ACHTUNG <= 2 {
+	if naturalNUB == 2 {
 		fmt.Println("ACHTUNG")
 	}
 }
