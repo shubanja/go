@@ -100,5 +100,7 @@ func main() {
 		{},
 	}
 	fmt.Println(mSlice)
+	mSlice[][] = [1][2]int{10}
+	fmt.Println(mSlice)
 
 }
