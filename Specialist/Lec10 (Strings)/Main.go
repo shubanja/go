@@ -108,7 +108,7 @@ func main() {
 		fmt.Println("Not Equal")
 	}
 	fmt.Println()
-	//14. Где живут полезные методы со строками?
+	//14. Где живут полезные методы со строками??
 	// import "strings"
 
 }
