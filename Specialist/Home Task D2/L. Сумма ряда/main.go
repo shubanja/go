@@ -30,6 +30,6 @@ outer:
 		}
 
 	}
-	fmt.Println(nArg)
-	fmt.Print(sumArg)
+	fmt.Println("Total num:", nArg)
+	fmt.Print("Summ num:", sumArg)
 }

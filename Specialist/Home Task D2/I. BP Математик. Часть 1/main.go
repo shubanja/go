@@ -18,6 +18,7 @@ func main() {
 	var i int
 	var naturalNUB int
 
+	fmt.Println("Enter NUMber")
 	_, err := fmt.Scan(&value) // enter number
 	if err != nil {
 		return
