@@ -14,11 +14,10 @@ func main() {
 	var sumArg int
 	var nArg int
 
-outer:
 	for {
 		_, err := fmt.Scan(&aArg)
 		if err != nil {
-			break outer
+			break
 		}
 		nArg = nArg + 1
 		if nArg%2 == 0 {

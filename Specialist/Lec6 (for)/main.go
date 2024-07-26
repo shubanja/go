@@ -80,7 +80,7 @@ outer:
 				break
 			}
 		}
-		if stopFlag { //Почему тут не узазывается явно true?
+		if stopFlag {
 			break
 		}
 	}
