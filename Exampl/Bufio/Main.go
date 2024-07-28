@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	file, err := os.Open("C:\\Users\\shubin\\Documents\\go\\go\\Exampl\\Bufio\\file.txt")
+	file, err := os.Open("C:\\Users\\MENDOZA\\Go\\src\\github\\go\\Exampl\\Bufio\\file.txt")
 	if err != nil {
 		fmt.Println(err)
 		return
