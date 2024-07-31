@@ -11,28 +11,30 @@ import (
 )
 
 func main() {
-	mySice := []rune{'Д', 'д', 'А', 'а'}
+
 	reader := bufio.NewReader(os.Stdin)
 	line, _ := reader.ReadString('\n')
 	mySlice := []rune(strings.TrimSpace(line))
-	x := len(mySlice) - 1
-	fmt.Println(len(mySlice))
-	fmt.Println(x)
-	fmt.Printf("%s _ %s\n", string(mySlice[0]), string(mySlice[x]))
+	lenSlice := len(mySlice) - 1
 
-	/*for _, run := range mySice[0:1] {
-		run ==
-	}*/
+	fmt.Println("Len:", len(mySlice))
+	fmt.Printf(" first:%s  last:%s\n ", string(mySlice[0]), string(mySlice[lenSlice]))
+	fmt.Print(approval(mySlice))
 
-	/*	if mySlice[0] == 'Д' || mySlice[0] == 'д' && mySlice[x] == 'А' || mySlice[x] == 'а' {
-			fmt.Println("СОГЛАСЕН")
-		} else {
-			fmt.Println("НЕ СОГЛАСЕН")
-		}*/
+}
 
-	for i, v := range mySlice {
-		mySlice[i]++
-		fmt.Printf("id: %d. Element:%s\n", i, string(v))
+func approval(a []rune) string {
+	argSlice := []rune{'Д', 'д', 'А', 'а'}
+	lenSlice := len(a) - 1
+	for _, run := range argSlice {
+		if run == a[0] {
+			for _, run := range argSlice {
+				if run == a[lenSlice] {
+					return "СОГЛАСЕН"
+				}
+			}
+
+		}
 	}
-
+	return "НЕ СОГЛАСЕН"
 }
