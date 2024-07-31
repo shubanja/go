@@ -59,7 +59,7 @@ func main() {
 	//7. Руны как литералы
 	runeLiteralSlice := []rune{'f', 'o', 'l', 'o'} // '' - такм образом обозначают руны
 	myStrFromLitral := string(runeLiteralSlice)
-	fmt.Printf("From Runes(literals): %s type:%T", myStrFromLitral, myStrFromLitral)
+	fmt.Printf("From Runes(literals): %s type:%T\n", myStrFromLitral, myStrFromLitral)
 	//7.Длина емкость строки
 	fmt.Println("Length of Вася:", len("Вася"), "bytes")
 	//Длина RuneCounter - количество  !рун!
