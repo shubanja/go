@@ -19,7 +19,7 @@ func main() {
 	fmt.Printf("Bytes: ")
 	for i := 0; i < len(word); i++ {
 		fmt.Printf("%x ", word[i]) // %x - формат представления 16ти ричного байта
-		//Bytes: 53 61 6d 70 6c 20 57 6f 72 6c 64
+		//Bytes: 48 65 6c 6c 6f 20 57 6f 72 6c 64 20 2f 20 d0 9f d1 80 d0 b8 d0 b2 d0 b5 d1 82 20 d0 bc d0 b8 d1 80 21
 	}
 	fmt.Println()
 	// Каким образом получить доступ к отдельно стоящим сиволам?
